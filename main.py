@@ -5,9 +5,11 @@ TouchLive !
 <Put the description here ^^>
 
 '''
+import os
+os.environ['KIVY_IMAGE'] = 'pil,sdl2' 
 
 import kivy
-kivy.require('1.0.7')
+kivy.require('1.9.1')
 
 from kivy.app import App
 from kivy.uix.floatlayout import FloatLayout
@@ -99,7 +101,7 @@ class TouchLiveMain(FloatLayout):
     def on_led(self, addr, tags, data, source):
         x, y, s =data[0:3]
         index = 63-int((x + y) + (y * 7))
-        print index
+        print (index)
         self.grid.children[index].highlight = bool(s)
 
     def on_led_col(self, addr, tags, data, source):

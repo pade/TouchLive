@@ -28,7 +28,7 @@ License : LGPL
 try :
     from OSC import *
 except :
-    print "Warning!!! you must have pyOSC installed -> https://trac.v2.nl/wiki/pyOSC"
+    print("Warning!!! you must have pyOSC installed -> https://trac.v2.nl/wiki/pyOSC")
     
 import threading
 
@@ -39,12 +39,12 @@ st = 0
 
 
 def printing_handler(addr, tags, data, source):
-    print "---"
-    print "received new osc msg from %s" % getUrlStr(source)
-    print "with addr : %s" % addr
-    print "typetags :%s" % tags
-    print "the actual data is : %s" % data
-    print "---"
+    print("---")
+    print("received new osc msg from %s" % getUrlStr(source))
+    print("with addr : %s" % addr)
+    print("typetags :%s" % tags)
+    print("the actual data is : %s" % data)
+    print("---")
 
 
 
@@ -78,9 +78,9 @@ def closeOSC() :
     if st is not 0: st.join()
 
 def reportOSCHandlers() :
-    print "Registered Callback-functions are :"
+    print("Registered Callback-functions are :")
     for addr in basic_server.getOSCAddressSpace():
-        print addr
+        print(addr)
     
 def sendOSCMsg( address='/print', data=[] ) :
     m = OSCMessage()
